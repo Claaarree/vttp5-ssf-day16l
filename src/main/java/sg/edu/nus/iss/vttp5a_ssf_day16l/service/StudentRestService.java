@@ -55,7 +55,7 @@ public class StudentRestService {
         return students;
     }
 
-    public void createStudent(Student student) {
+    public String createStudent(Student student) {
         // day 16: slide 7
         // Convert to Json string using Json-P functions
         JsonObjectBuilder jObject = Json.createObjectBuilder();
@@ -68,5 +68,7 @@ public class StudentRestService {
         RequestEntity<String> requestEntity = RequestEntity.post(Url.studentUrl, "/create").body(requestPayload);
 
         ResponseEntity<String> responseResult = restTemplate.exchange(requestEntity, String.class);
+
+        return responseResult.getBody();
     }
 }

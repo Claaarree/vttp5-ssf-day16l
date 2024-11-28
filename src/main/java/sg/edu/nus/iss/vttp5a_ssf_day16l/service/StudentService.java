@@ -47,6 +47,6 @@ public class StudentService {
             Student s = new Student(Integer.parseInt(data[0]), data[1], data[2], data[3]);
             studentRecords.add(s);
         }
-        return null;
+        return studentRecords;
     }
 }
